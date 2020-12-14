@@ -1,0 +1,358 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{gensymb}
+%\doublespacing
+\singlespacing
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+%\usepackage{iithtlc}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\newenvironment{amatrix}[1]{%
+  \left(\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right)
+}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+%\numberwithin{equation}{section}
+\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\usepackage{mathtools, nccmath}
+\begin{document}
+\begin{center}
+\huge Assignment 7\\
+\large SUBHASISH SAIKIA\\
+\large AI20MTECH14001\\
+\end{center}
+\vspace{0.5cm}
+\begin{abstract}
+This document explains whether two lines meet at a point and to find out the distance of the point from any plane using singular valued decomposition and to verify the result using least squares.
+\end{abstract}
+\vspace{0.5cm}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/subhasishsaikia22/EE5609-Matrix-theory
+\end{lstlisting}
+%
+and latex-tikz codes from 
+\begin{lstlisting}
+https://github.com/subhasishsaikia22/EE5609-Matrix-theory
+\end{lstlisting}
+%
+\vspace{0.5cm}
+\section{Problem}
+Show that the lines
+\begin{align}
+x&=4-2t,\quad y=-3+2t,\quad z=5-3t\\
+x&=t,\quad y=1-4t,\quad z=-1+3t
+\end{align}
+meet in a point.\quad Determine the coordinates of this point.
+Find the distance of the point from any one of the planes using single valued decomposition and verify the result using least squares.
+\section{Point of Intersection of Two Lines}
+Let the two lines
+\begin{align}
+L_1 : x=4-2t,\quad y=-3+2t,\quad z=5-3t\\
+\implies L_1  :\vec{x}=\myvec{4\\-3\\5}+\lambda_1\myvec{-2\\2\\-3}\\
+L_2  :  x=t,\quad y=1-4t,\quad z=-1+3t\\
+\implies L_2  :\vec{x}=\myvec{0\\1\\-1}+\lambda_2\myvec{1\\-4\\3}
+\end{align}
+The two lines will meet at a point if and only if the rank of the coefficient matrix and the  rank of the augmented matrix are both 2.\\
+If the two given lines intersect:
+\begin{align}
+\vec{x_1}+\lambda_1\vec{m_1}=\vec{x_2}+\lambda_2\vec{m_2}\\
+\implies \myvec{m_1 \quad m_2}\myvec{\lambda_1\\-\lambda_2}=\vec{x_2}-\vec{x_1}\\
+\implies \vec{M}\myvec{\lambda_1\\-\lambda_2}=\vec{x_2}-\vec{x_1}\label{eqn}
+\intertext{where}
+\vec{x_1}=\myvec{4\\-3\\5},\vec{x_2}=\myvec{0\\1\\-1},\vec{m_1}=\myvec{-2\\2\\-3},\vec{m_2}=\myvec{1\\-4\\3}\\
+\vec{M}=\myvec{m_1 \quad m_2}
+\end{align}
+\eqref{eqn} can be expressed as the matrix equation:
+\begin{align}
+    \myvec{-2\quad1\\2\quad -4\\-3\quad 3}\vec{\lambda}=\myvec{-4\\4\\-6}
+\end{align}
+the augmented matrix of \eqref{eqn}
+\begin{align}
+    \myvec{-2 & 1  & -4 \\ 2 & -4 &  4\\ -3 & 3  & -6}\label{eqaug}\xleftrightarrow{R_2=R_2+R_1}\myvec{-2&1&-4\\0&-3&0\\-3&3&-6}\\
+    \xleftrightarrow{R_3=R_3+\frac{3}{2} R_2}\myvec{-2&1&-4\\0&-3&0\\0&-3&0}\xleftrightarrow{R_3=R_3- R_2}\myvec{-2&1&-4\\0&-3&0\\0&0&0}\label{augmat}
+\end{align}
+Since both coefficient matrix and the augmented matrix has $rank=2$, the given equation of lines meet at a point.\\ 
+From\eqref{augmat}
+\begin{align}
+\myvec{-2&1&-4\\0&-3&0\\0&0&0}\xleftrightarrow[R_1=R_1+R_2]{R_2=\frac{1}{3}R_2}\myvec{-2&0&-4\\0&-1&0\\0&0&0}
+\\\xleftrightarrow{R_1=\frac{1}{-2}R_1}\myvec{1&0&2\\0&-1&0\\0&0&0}\label{rrefeqn}
+\end{align}
+From\eqref{eqn} and\eqref{rrefeqn},
+\begin{align}
+ \lambda_1=2,\lambda_2=0  
+\end{align}
+Therefore the point of intersection of the given lines:
+\begin{align}
+ L_1 : \Vec{x}=\myvec{4\\-3\\5}+2\myvec{-2\\2\\-3}\\
+ \implies \vec{x}=\myvec{0\\1\\-1}\label{pointcoor}
+\end{align}
+\section{Coordinates of the foot of the perpendicular}
+To find the distance of the point of intersection of the given lines \eqref{pointcoor} from any plane. We need to find the foot of the perpendicular from the particular point to the given plane.
+Let us consider an arbitrary plane 
+\begin{align}
+    \myvec{1\quad2\quad-2}\Vec{x}=9\label{planeeqn}
+    \intertext{and the point of intersection is}
+    \Vec{b}=\myvec{0\\1\\-1}
+\end{align}
+The plane is in the form of 
+\begin{align}
+  \vec{n}^T\vec{x} =c 
+  \intertext{from\eqref{planeeqn},where}
+  \vec{n}=\myvec{1\\2\\-2}\\
+  \vec{x} = \myvec{x\\y\\z}\\
+  c=9
+\end{align}
+Let $\Vec{m_1}$ and $\vec{m_2}$ be the orthogonal vectors to the normal vector $\vec{n}$. Let $\vec{m}=\myvec{a\\b\\c}$,then
+\begin{align}
+    \vec{m}^T\vec{n}=0\\
+    \implies \myvec{a\quad b\quad c}\myvec{1\\2\\-2}=0\\
+    \implies a+2b-2c=0\\
+\intertext{putting a=1 and b=0 we get,}
+\vec{m_1}=\myvec{1\\0\\\frac{1}{2}}
+\intertext{putting a=0 and b=1 we get,}
+\vec{m_2}=\myvec{0\\1\\1}
+\end{align}
+Now we solve the equation:
+\begin{align}
+  \vec{M}\vec{x}=\vec{b}\label{footcooreqn}
+\end{align}
+In order to solve \eqref{footcooreqn},have to perform single valued decomposition on $\vec{M}$ as follows:
+\begin{align}
+\vec{M}=\vec{U}\vec{S}\vec{V}^T\label{eq100}
+\end{align}
+Where the columns of $\vec{V}$ are the eigen vectors of $\vec{M}^T\vec{M}$ ,the columns of $\vec{U}$ are the eigen vectors of $\vec{M}\vec{M}^T$ and $\vec{S}$ is diagonal matrix of singular value of eigenvalues of $\vec{M}^T\vec{M}$.
+\begin{align}
+\vec{M}^T\vec{M}=\myvec{\frac{5}{4}&\frac{1}{2}\\\frac{1}{2}&2}\label{eqMTM}\\
+\vec{M}\vec{M}^T=\myvec{1&0&\frac{1}{2}\\0&1&1\\\frac{1}{2}&1&\frac{5}{4}}
+\end{align}
+From \eqref{footcooreqn} putting \eqref{eq100} we get,
+\begin{align}\label{eqX}
+\vec{U}\vec{S}\vec{V}^T\vec{x} & = \vec{b}\\
+\implies\vec{x} &= \vec{V}\vec{S_+}\vec{U^T}\vec{b}
+\end{align}
+Where $\vec{S_+}$ is Moore-Penrose Pseudo-Inverse of $\vec{S}$.Now, calculating eigen value of $\vec{M}\vec{M}^T$,
+\begin{align}
+\mydet{\vec{M}\vec{M}^T - \lambda\vec{I}} = 0\\
+\implies\myvec{1-\lambda\quad0\quad\frac{1}{2}\\0\quad1-\lambda\quad1\\\frac{1}{2}\quad1\quad\frac{5}{2}-\lambda} =0\\
+\implies-4\lambda^3+13 \lambda^2-9\lambda =0
+\end{align}
+Hence eigen values of $\vec{M}\vec{M}^T$ are,
+\begin{align}
+\lambda_1 =\frac{9}{4}\\
+\lambda_2 = 1\\
+\lambda_3 =0
+\end{align}
+Hence the eigen vectors of $\vec{M}\vec{M}^T$ are,
+\begin{align}
+\vec{u}_1=\myvec{\frac{2}{5}\\\frac{4}{5}\\1},
+\vec{u}_2=\myvec{-2\\1\\0},
+\vec{u}_3=\myvec{\frac{-1}{2}\\-1\\1}
+\end{align}
+Normalizing the eigen vectors we get,
+\begin{align}
+\vec{u}_1=\myvec{\frac{2}{\sqrt{45}}\\\frac{4}{\sqrt{45}}\\\frac{5}{\sqrt{45}}},
+\vec{u}_2=\myvec{-\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}\\0},
+\vec{u}_3=\myvec{-\frac{1}{3}\\-\frac{2}{3}\\\frac{2}{3}}
+\end{align}
+Hence we obtain $\vec{U}$ of \eqref{eq100} as follows,
+\begin{align}\label{eqU}
+\myvec{\frac{2}{\sqrt{45}}& -\frac{2}{\sqrt{5}}&-\frac{1}{3}\\
+\frac{4}{\sqrt{45}}&\frac{1}{\sqrt{5}}&-\frac{2}{3}\\
+\frac{5}{\sqrt{45}}&0&\frac{2}{3}}
+\end{align}
+After computing the singular values from eigen values $\lambda_1, \lambda_2, \lambda_3$ we get $\vec{S}$ of \eqref{eq100} as follows,
+\begin{align}\label{eqS}
+\vec{S}=\myvec{\frac{3}{2}&0\\0&1\\0&0}
+\end{align}
+Now, calculating eigen value of $\vec{M}^T\vec{M}$,
+\begin{align}
+\mydet{\vec{M}^T\vec{M} - \lambda\vec{I}} &= 0\\
+\implies\myvec{\frac{5}{4}-\lambda&\frac{1}{2}\\\frac{1}{2}&2-\lambda} &=0\\
+\implies\lambda^2-\frac{13}{4}\lambda+\frac{9}{4} &=0
+\end{align}
+Hence eigen values of $\vec{M}^T\vec{M}$ are,
+\begin{align}
+\lambda_4 &= \frac{9}{4}\\
+\lambda_5 &=1
+\end{align}
+Hence the eigen vectors of $\vec{M}^T\vec{M}$ are,
+\begin{align}
+\vec{v}_1=\myvec{\frac{1}{2}\\1},
+\vec{v}_2=\myvec{-2\\1}
+\intertext{Normalizing the eigen vectors we get,}
+\vec{v}_1=\myvec{\frac{1}{\sqrt{5}}\\\frac{2}{\sqrt{5}}},
+\vec{v}_2=\myvec{-\frac{2}{\sqrt{5}}\\\frac{1}{\sqrt{5}}}
+\end{align}
+Hence we obtain $\vec{V}$ of \eqref{eq100} as follows,
+\begin{align}
+\vec{V}=\myvec{\frac{1}{\sqrt{5}}&-\frac{2}{\sqrt{5}}\\\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}
+\end{align}
+ From \eqref{eq100} we get the Singular Value Decomposition of $\vec{M}$ ,
+\begin{align}
+\vec{M} = \myvec{\frac{2}{\sqrt{45}}&-\frac{2}{\sqrt{5}}&-\frac{1}{3}\\
+\frac{4}{\sqrt{45}} & \frac{1}{\sqrt{5}}&\frac{-2}{3}\\
+\frac{5}{\sqrt{45}}  & 0&\frac{2}{3}}\myvec{\frac{3}{2}&0\\0&1\\0&0}\myvec{\frac{1}{\sqrt{5}}&-\frac{2}{\sqrt{5}}\\\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{5}}}^T
+\end{align}
+Moore-Penrose Pseudo inverse of $\vec{S}$ is given by,
+\begin{align}
+\vec{S_+} = \myvec{\frac{2}{3}&0&0\\0&1&0}
+\end{align}
+From \eqref{eqX} we get,
+\begin{align}
+\vec{U}^T\vec{b}&=\myvec{-\frac{1}{\sqrt{45}}\\\frac{1}{\sqrt{5}}\\\frac{-4}{3}}\\
+\vec{S_+}\vec{U}^T\vec{b}=\myvec{-\frac{2}{3\sqrt{45}}\\\frac{\sqrt{1}}{\sqrt{5}}}\\
+\vec{x} = \vec{V}\vec{S_+}\vec{U}^T\vec{b} = \myvec{-\frac{4}{9}\\\frac{1}{9}}\label{eq85}
+\end{align}
+\section{Verification using least square}
+Verifying the solution of \eqref{eq85} using,
+\begin{align}
+\vec{M}^T\vec{M}\vec{x} = \vec{M}^T\vec{b}\label{eqVerify}
+\end{align}
+Evaluating the R.H.S in \eqref{eqVerify} we get,
+\begin{align}
+\vec{M}^T\vec{M}\vec{x} = \myvec{-\frac{1}{2}\\0}\\
+\implies\myvec{\frac{5}{4}&\frac{1}{2}\\\frac{1}{2}&2}\vec{x} = \myvec{-\frac{1}{2}\\0}\label{eq:eq17}
+\end{align}
+Solving the augmented matrix of \eqref{eq:eq17} we get,
+\begin{align}
+\myvec{\frac{5}{4}&\frac{1}{2}&-\frac{1}{2}\\\frac{1}{2}&2&0} &\xleftrightarrow{R_2=R_2-\frac{2}{5}R_1}\myvec{\frac{5}{4}&\frac{1}{2}&\frac{-1}{2}\\0&\frac{9}{5}&\frac{1}{5}}\\
+\xleftrightarrow[R_1=\frac{4}{5}R_1]  {R_2=\frac{5}{9}R_2}\myvec{1&\frac{2}{5}&\frac{-2}{5}\\0&1&\frac{1}{9}}&\xleftrightarrow{R_1=R_1-\frac{2}{5}R_2}\myvec{1&0&-\frac{4}{9}\\0&1&\frac{1}{9}}\label{eq:eq13}
+\end{align}
+From equation \eqref{eq:eq13}, solution is given by,
+\begin{align}\label{eq:eq14}
+\vec{x}=\myvec{\frac{-4}{9}\\\frac{1}{9}}
+\end{align}
+Comparing results of $\vec{x}$ from \eqref{eq85} and \eqref{eq:eq14}, we can say that the solution is verified\\
+
+\section{Distance from a point to a plane}
+Let the point of intersection of the lines  be represented by\quad$\vec{P}$ and the foot of the perpendicular from the particular point\quad $\vec{P}$ to the given plane be $\vec{Q}$.`\\
+From  \eqref{pointcoor}and \eqref{eq85} ,
+\begin{align}
+    \vec{P}=\myvec{0\\1\\-1}\\
+    \vec{Q}=\myvec{\frac{-4}{9}\\\frac{1}{9}\\0}
+\end{align}
+The distance between the point of intersection  of the lines from  the plane is:
+\begin{align}
+    \norm{\vec{P}-\vec{Q}}=\sqrt{\brak{0-\frac{-4}{9}}^2+\brak{1-\frac{1}{9}}^2+\brak{-1-0}^2}\\
+\implies \norm{\vec{P}-\vec{Q}}=\frac{\sqrt{161}}{9}=1.409
+\end{align}
+\end{document}
