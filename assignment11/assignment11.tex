@@ -1,0 +1,198 @@
+\documentclass[journal,12pt]{IEEEtran}
+\usepackage{longtable}
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+\newcommand\myemptypage{
+\null
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
+}
+\usepackage{amsthm}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}    
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single,
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+\onecolumn
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 11}
+\author{Subhasish Saikia\\AI20MTECH14001}
+\maketitle
+\begin{abstract}
+This document explains the transformation of vector space $\mathbb{P}_{n}$
+\end{abstract}
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download latex-tikz codes from
+\begin{lstlisting}
+https://github.com/subhasishsaikia22/EE5609-Matrix-theory
+\end{lstlisting}
+\section{\textbf{Problem}}
+Consider the vector space $\mathbb{P}_{n}$ of real polynomials in ${x}$ of degree less than or equal to ${n}$. Define $\vec{T} : \mathbb{P}_{2}\rightarrow \mathbb{P}_{3}$ by $\vec{T}(f(x))=\int\limits_0^xf(t)\,dt+f'(x)$.Then the matrix  representation of \vec{T} with respect to the bases $\cbrak{1,x,x^2}$ and $\cbrak{1,x,x^2,x^3}$ is \\
+\begin{enumerate}
+\item  $\myvec{0&1&0&0\\1&0&\frac{1}{2}&0\\0&2&0&\frac{1}{3}}$\\\\
+\item $\myvec{0&1&0\\1&0&2\\0&\frac{1}{2}&0\\0&0&\frac{1}{3}}$ \\\\
+\item  $\myvec{0&1&0&0\\1&0&2&0\\0&\frac{1}{2}&0&\frac{1}{3}}$ \\\\
+\item $\myvec {0&1&0\\1&0&\frac{1}{2}\\0&2&0\\0&0&\frac{1}{3}}$ 
+\end{enumerate}
+
+\section{\textbf{Solution}}
+\renewcommand{\thetable}{2}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Given} & \parbox{13cm} {\begin{align}
+ \vec{T}(f(x))=\int\limits_0^xf(t)\,dt+f'(x)
+\end{align}}\\
+&\text{The basis vector of domain space $\cbrak{1,x,x^2} $.}\\ &\text{The basis vector of co-domain space $\cbrak{1,x,x^2,x^3} $. }\\ 
+&\text{For the Transformation, we first find the images of the basis vector of domain space}\\ &\text {with respect to \vec{T}, which is then expressed as the linear combination of basis vector}\\&\text{of codomain space basis.}
+\hline
+\textbf{solution}  &\text{Base vector 1:}\\ & \parbox{13cm} {\begin{align}
+f(x)=1 \implies f'(x)=0\\
+\vec{T}(1)=\int\limits_0^x1\,dt+0=\sbrak{t}\limits_0^x=x\\
+=0+1.x+0.x^2+0.x^3\\
+\vec{T}(1)=\myvec{0\\1\\0\\0}
+\end{align}}\\
+ &\text{Base vector 2:}\\ & \parbox{13cm} {\begin{align}
+f(x)=x \implies f'(x)=1\\
+\vec{T}(x)=\int\limits_0^xt\,dt+1=\sbrak{\frac{t^2}{2}}\limits_0^x+1=\frac{x^2}{2}+1\\
+=1+0.x+\frac{1}{2}.x^2+0.x^3\\
+\vec{T}(x)=\myvec{1\\0\\\frac{1}{2}\\0}
+\end{align}}\\
+&\text{Base vector 3:}\\ & \parbox{13cm} {\begin{align}
+f(x)=x^2 \implies f'(x)=2x\\
+\vec{T}(x^2)=\int\limits_0^xt^2\,dt+2t=\sbrak{\frac{t^3}{3}}\limits_0^x+\sbrak{2t}\limits_0^x=\frac{x^3}{3}+2x\\
+=0+2.x+0.x^2+\frac{1}{3}.x^3\\
+\vec{T}(x^2)=\myvec{0\\2\\0\\\frac{1}{3}}
+\end{align}}\\
+&\text{Therefore}\\ & \parbox{13cm} {\begin{align}
+\vec{T}=\myvec{\vec{T}(1)& \vec{T}(x)& \vec{T}(x^2)}\\
+=\myvec{0&1&0\\1&0&2\\0&\frac{1}{2}&0\\0&0&\frac{1}{3}}
+\end{align}}\\
+\hline
+\caption{Solution}
+\label{deftab}
+\end{longtable}\\
+\section{\textbf{option}}
+\renewcommand{\thetable}{3}
+\begin{longtable}{|l|l|l|}
+\hline
+\textbf{Option}&\textbf{Solution}&\textbf{True/}\\&&\textbf{False}\\
+\hline
+1 & $\myvec{0&1&0&0\\1&0&\frac{1}{2}&0\\0&2&0&\frac{1}{3}}$&False
+\hline
+2 & $\myvec{0&1&0\\1&0&2\\0&\frac{1}{2}&0\\0&0&\frac{1}{3}}$&True
+\hline
+3 &$\myvec{0&1&0&0\\1&0&2&0\\0&\frac{1}{2}&0&\frac{1}{3}}$&False
+\hline
+4 &$\myvec {0&1&0\\1&0&\frac{1}{2}\\0&2&0\\0&0&\frac{1}{3}}$&False
+\hline
+\caption{correct option}
+\label{deftab}
+\end{longtable}
+\end{document}
